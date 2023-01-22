@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">LOGO</div>
+        <ul data-aos="fade-down" data-aos-duration="800">
+          <li>Home</li>
+          <li>News</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+      <div
+        class="banner"
+        style="background-image: url('./assets/img/mayon/mayon-1.webp')"
+      >
+        <div
+          class="glass-wrapper"
+          data-aos="fade-right"
+          data-aos-delay="300"
+          data-aos-duration="800"
+        ></div>
+      </div>
+      <div class="hero-title">
+        <p data-aos="fade-left" data-aos-delay="500" data-aos-duration="700">
+          Discover
+        </p>
+        <p
+          class="country"
+          class="country"
+          data-aos="fade-left"
+          data-aos-delay="600"
+          data-aos-duration="700"
+        >
+          Philippines
+        </p>
+        <div
+          class="details"
+          class="details"
+          data-aos="fade-left"
+          data-aos-delay="700"
+          data-aos-duration="700"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+          repellendus voluptatum quod veritatis, quaerat expedita dicta nobis.
+          Perspiciatis doloribus voluptatem, magni natus iusto ex, fugiat
+          molestias, laudantium possimus dolores soluta.
+        </div>
+        <div
+          class="explore"
+          class="explore"
+          data-aos="fade-left"
+          data-aos-delay="800"
+          data-aos-duration="700"
+        >
+          <button>Explore</button>
+        </div>
+      </div>
+      <div class="tourist-list">
+        <ul class="place-list">
+          <li
+            class="active"
+            data-aos="fade-down"
+            data-aos-delay="600"
+            data-aos-duration="700"
+            data-img="./assets/img/mayon/mayon-1.webp"
+          >
+            <div
+              class="thumbnail"
+              style="background: url('./assets/img/mayon/mayon-1.webp')"
+            >
+              <div class="details">
+                <p class="province">Bicol</p>
+                <p class="place-name">Mayon Volcano</p>
+              </div>
+            </div>
+          </li>
+          <li
+            data-img="./assets/img/bohol/bohol-1.jpg"
+            data-aos="fade-down"
+            data-aos-delay="750"
+            data-aos-duration="700"
+          >
+            <div
+              class="thumbnail"
+              style="background: url('./assets/img/bohol/bohol-1.jpg')"
+            >
+              <div class="details">
+                <p class="province">Bohol</p>
+                <p class="place-name">Tarsier</p>
+              </div>
+            </div>
+          </li>
+          <li
+            data-img="./assets/img/palawan/palawan-1.jpg"
+            data-aos="fade-down"
+            data-aos-delay="850"
+            data-aos-duration="700"
+          >
+            <div
+              class="thumbnail"
+              style="background: url('./assets/img/palawan/palawan-1.jpg')"
+            >
+              <div class="details">
+                <p class="province">Palawan</p>
+                <p class="place-name">Coron</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <style></style>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    let places = document.querySelectorAll(".place-list li");
+    let active = "/assets/img/mayon/mayon-1.webp";
+
+    places.forEach((e) => {
+      e.addEventListener("mouseenter", (event) => {
+        places.forEach((e) => {
+          e.classList.remove("active");
+        });
+
+        event.target.classList.add("active");
+        active = event.target.getAttribute("data-img");
+        let banner = document.querySelector(".banner");
+        banner.style.backgroundImage = `url('${active}')`;
+      });
+    });
+  </script>
+</html>
